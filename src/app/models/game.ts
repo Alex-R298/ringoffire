@@ -1,6 +1,6 @@
 export class Game {
   // Game model properties and methods would go here
-  public players: string[] = ['hans', 'peter', 'lena', 'sarah'];
+  public players: string[] = [];
   public stack: string[] = [];
   public playedCard: string[] = [];
   public currentPlayer: number = 0;
