@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, importProvidersFrom } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -17,6 +17,18 @@ import { MatInputModule } from '@angular/material/input';
 import { GameInfoComponent } from './game-info/game-info.component';
 import {MatCardModule} from '@angular/material/card';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD4ON3GnTSjLo6nUP2wyUli3ZGuIRgmsUo",
+  authDomain: "ring-of-fire-fc8c7.firebaseapp.com",
+  projectId: "ring-of-fire-fc8c7",
+  storageBucket: "ring-of-fire-fc8c7.firebasestorage.app",
+  messagingSenderId: "267187753633",
+  appId: "1:267187753633:web:59c62c7e48841b0ab0d6e0"
+};
 
 @NgModule({
   declarations: [
@@ -30,6 +42,8 @@ import {MatCardModule} from '@angular/material/card';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
     MatButtonModule,
     MatIconModule,
     BrowserAnimationsModule,
